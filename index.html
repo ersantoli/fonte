@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fontes de Alimentação para PC - Corsair</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        /* Reseta e configurações básicas */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            color: #fff;
+            background-color: #121212;
+        }
+        a {
+            text-decoration: none;
+            color: #ffc107;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+        .sidebar, .main-content {
+            padding: 16px;
+            background-color: #1c1c1c;
+            border-radius: 8px;
+        }
+        .sidebar {
+            flex: 1 1 250px;
+            max-width: 250px;
+        }
+        .main-content {
+            flex: 3 1 700px;
+        }
+        .sidebar h2, .main-content h2 {
+            margin-bottom: 16px;
+            font-size: 1.2em;
+        }
+        .product-card {
+            background-color: #2c2c2c;
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+        }
+        .product-card h3 {
+            font-size: 1em;
+            margin-bottom: 8px;
+        }
+        .product-card img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .product-card .price {
+            margin-top: 8px;
+            color: #ffc107;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 16px;
+        }
+        .filters label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ccc;
+            font-size: 0.9em;
+        }
+        .footer {
+            text-align: center;
+            padding: 16px;
+            background-color: #1c1c1c;
+            margin-top: 16px;
+            font-size: 0.9em;
+        }
+        .sub-header{
+            border:1px solid aqua;
+            display:flex;
+            flex-direction:row;
+            justify-content:space-around
+
+        }
+        .sub-header img{
+            width:50px;
+           
+        }
+        .banner{
+            display:flex;
+            align-items:center;
+            justify-content: center;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .sidebar, .main-content {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="img/logob.png" width="50px"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+</header>
+<div class="sub-header">
+    <div style="display: flex;flex-direction:column;align-items:center;"><img src="img/fonte-de-energia (1).png" alt="">
+        <p>corsair</p>
+        <label>200 a 400</label>
+        
+    </div>
+    <div style="display: flex;flex-direction:column;align-items:center;"><img src="img/img2.png" alt="">
+        <p>thermaltak
+        </p>
+        <label>200 a 400</label>
+    </div>
+    <div style="display: flex;flex-direction:column;align-items:center;"><img src="img/fonte-de-energia.png" alt="">
+        <p>MSI</p>
+        <label>200 a 400</label>
+    </div>
+    <div style="display: flex;flex-direction:column;align-items:center;"><img src="img/img1.png" alt="">
+        <p>XPG</p>
+        <label>200 a 400</label>
+    </div>
+    <div style="display: flex;flex-direction:column;align-items:center;"><img  style="background-color: black;" src="img/fonte.png" alt="">
+        <p>SILVESTONE</p>
+        <label>200 a 400</label>
+    </div>
+    
+    
+    
+    
+    
+</div>
+<div class="banner">
+    <video loop autoplay
+    width="70%"  src="video/banner.mp4" 
+    ></video>
+</div>
+
+<div class="container">
+    <aside class="sidebar">
+        <h2>Categorias</h2>
+        <div class="filters">
+            <label><input type="checkbox"> Todos os produtos</label>
+            <label><input type="checkbox"> Até 650W</label>
+            <label><input type="checkbox"> 700W - 850W</label>
+            <label><input type="checkbox"> 1000W+</label>
+            <!-- Adicione mais filtros conforme necessário -->
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <h2>Fontes de Alimentação</h2>
+        <div class="product-grid">
+            <!-- Card do Produto -->
+            <div class="product-card">
+                <img src="https://img.terabyteshop.com.br/produto/p/fonte-msi-mag-a650bn-650w-80-plus-bronze-pfc-ativo-black_157168.jpg" alt="Produto 1">
+                <h3>Fonte MSI MAG A650BN, 650W, 80 Plus Bronze, PFC Ativo, Black</h3>
+                <a href="#">Saiba Mais</a>
+            </div>
+            <div class="product-card">
+                <img src="https://img.terabyteshop.com.br/produto/p/fonte-gamemax-gs600-600w-80-plus-white-pfc-ativo_197842.jpg" alt="Produto 2">
+                <h3><a href="">Fonte Gamemax GS600, 600W, 80 Plus White, PFC Ativo, Black
+                    De: R$ 429,90 por:</a></h3>
+                <a href="#">Saiba Mais</a>
+            </div>
+            <div class="product-card">
+                <img src="https://img.terabyteshop.com.br/produto/p/fonte-brx-rainbow-rgb-650w-80-plus-bronze-pfc-ativo-51033651_171573.jpg" alt="Produto 3">
+                <h3><a href="">Fonte BRX Rainbow RGB, 650W, 80 Plus Bronze, PFC Ativo, 51033651</a></h3>
+                <a href="#">Saiba Mais</a>
+            </div>
+            <!-- Continue adicionando cards de produtos conforme necessário -->
+        </div>
+    </main>
+</div>
+
+<footer class="footer">
+    <p>Copyright &copy; 2024 CORSAIR. Todos os direitos reservados.</p>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
