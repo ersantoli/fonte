@@ -96,14 +96,58 @@
             display:flex;
             align-items:center;
             justify-content: center;
+           
         }
+        .banner video{
+            border-radius:10%;
+            width:90%;
+           
+           }
+           .cards{
+            display:flex;
+            flex-direction:row;
+            justify-content:space-around;
+            align-items:center;
+            
+            
+           }
+           .card{
+            width:25rem;
+            height: 40rem;
+            border-radius: 20px;
+            overflow:hidden;
+           }
+           .cards :hover{
+            width:25.5rem;
+            height: 42rem;
+            padding: 1rem;
+            position: relative;
+           /* background: linear-gradient(to right, red, purple);
+            padding: 3px;
+           box-shadow: 10px 25px 15px rgb(3, 206, 247);
+           /* box-shadow:conic-gradient(#ff4545,#00ff99,#006aff,#ff0095,#ff4545)*/
+           }
+           
+         a{
+            color: white;
+         }
         
         /* Responsividade */
         @media (max-width: 768px) {
+            p{
+                font-size:1rem
+            }
             .sidebar, .main-content {
                 flex: 1 1 100%;
                 max-width: 100%;
             }
+            .sub-header img{
+            width:30px;
+           }
+           .banner video{
+            height:300px;
+            width:400px;
+           }
         }
     </style>
 </head>
@@ -112,7 +156,7 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#"><img src="img/logob.png" width="50px"></a>
+          <a class="navbar-brand" href="#"><img src="img/logob.png" width="100px"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -122,41 +166,39 @@
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="#">Mais Vendidos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link" href="#">Preços</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-              </li>
+          
             </ul>
           </div>
         </div>
       </nav>
 </header>
 <div class="sub-header">
-    <div style="display: flex;flex-direction:column;align-items:center;"><img src="img/fonte-de-energia (1).png" alt="">
-        <p>corsair</p>
-        <label>200 a 400</label>
+    <div style="display: flex;flex-direction:column;align-items:center;"><a href=""><img src="img/fonte-de-energia (1).png" alt=""></a>
+        <p>Corsair</p>
+        <label>ate 650w</label>
         
     </div>
-    <div style="display: flex;flex-direction:column;align-items:center;"><img src="img/img2.png" alt="">
-        <p>thermaltak
+    <div style="display: flex;flex-direction:column;align-items:center;"><a href=""><img src="img/img2.png" alt=""></a>
+        <p>Thermaltak
         </p>
-        <label>200 a 400</label>
+        <label>700W - 850W</label>
     </div>
-    <div style="display: flex;flex-direction:column;align-items:center;"><img src="img/fonte-de-energia.png" alt="">
+    <div style="display: flex;flex-direction:column;align-items:center;"><a href=""><img src="img/fonte-de-energia.png" alt=""></a>
         <p>MSI</p>
-        <label>200 a 400</label>
+        <label>Até 650W</label>
     </div>
-    <div style="display: flex;flex-direction:column;align-items:center;"><img src="img/img1.png" alt="">
+    <div style="display: flex;flex-direction:column;align-items:center;"><a href=""><img src="img/img1.png" alt=""></a>
         <p>XPG</p>
-        <label>200 a 400</label>
+        <label>200 a 520</label>
     </div>
-    <div style="display: flex;flex-direction:column;align-items:center;"><img  style="background-color: black;" src="img/fonte.png" alt="">
+    <div style="display: flex;flex-direction:column;align-items:center;"><a href=""><img  style="background-color: black;" src="img/fonte.png" alt=""></a>
         <p>SILVESTONE</p>
-        <label>200 a 400</label>
+        <label>700W - 850W</label>
     </div>
     
     
@@ -165,8 +207,8 @@
     
 </div>
 <div class="banner">
-    <video loop  controls autoplay
-    width="70%"  src="video/banner.mp4" 
+    <video loop autoplay
+     src="video/banner.mp4" 
     ></video>
 </div>
 
@@ -187,28 +229,52 @@
         <div class="product-grid">
             <!-- Card do Produto -->
             <div class="product-card">
-                <img src="https://img.terabyteshop.com.br/produto/p/fonte-msi-mag-a650bn-650w-80-plus-bronze-pfc-ativo-black_157168.jpg" alt="Produto 1">
+              <a href="https://www.corsair.com/br/pt/p/psu/cp-9020250-br/rme-series-rm1000e-fully-modular-low-noise-atx-power-supply-cp-9020250-br">  <img src="https://img.terabyteshop.com.br/produto/p/fonte-msi-mag-a650bn-650w-80-plus-bronze-pfc-ativo-black_157168.jpg" alt="Produto 1"></a>
                 <h3>Fonte MSI MAG A650BN, 650W, 80 Plus Bronze, PFC Ativo, Black</h3>
-                <a href="#">Saiba Mais</a>
+                <a href="https://www.corsair.com/br/pt/p/psu/cp-9020250-br/rme-series-rm1000e-fully-modular-low-noise-atx-power-supply-cp-9020250-br">Saiba Mais</a>
             </div>
             <div class="product-card">
-                <img src="https://img.terabyteshop.com.br/produto/p/fonte-gamemax-gs600-600w-80-plus-white-pfc-ativo_197842.jpg" alt="Produto 2">
+                <a href="https://www.gamemax-br.com/produto/GS600"><img src="https://img.terabyteshop.com.br/produto/p/fonte-gamemax-gs600-600w-80-plus-white-pfc-ativo_197842.jpg" alt="Produto 2"></a>
+                
                 <h3><a href="">Fonte Gamemax GS600, 600W, 80 Plus White, PFC Ativo, Black
                     De: R$ 429,90 por:</a></h3>
                 <a href="#">Saiba Mais</a>
             </div>
             <div class="product-card">
-                <img src="https://img.terabyteshop.com.br/produto/p/fonte-brx-rainbow-rgb-650w-80-plus-bronze-pfc-ativo-51033651_171573.jpg" alt="Produto 3">
-                <h3><a href="">Fonte BRX Rainbow RGB, 650W, 80 Plus Bronze, PFC Ativo, 51033651</a></h3>
+                <a href=""><img src="https://assets.corsair.com/image/upload/c_pad,q_85,h_1100,w_1100,f_auto/products/Power-Supply-Units/base-rmx-shift-white-config/gallery/CP-9020276/CP-9020276_01.webp" alt="Produto 3"></a>
+                <h3><a href="">Fonte de alimentação ATX totalmente modular 80 PLUS Gold RM1200x SHIFT - Branca (WW)</a></h3>
                 <a href="#">Saiba Mais</a>
             </div>
             <!-- Continue adicionando cards de produtos conforme necessário -->
         </div>
     </main>
 </div>
+<h3 style="font-size: 5rem;text-align:center;margin-top:30px;margin-bottom:50px">Conheça as Melhores Fontes</h3>
+<div class="cards">
+    <div class="card" >
+        <img class="card-img-top" src="img/card1.png" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">
+            As estruturas da CV Series têm somente 125mm de comprimento, o que facilita a instalação em quase todos os gabinetes de PC modernos..</p>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="img/card2.jpg" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">Uma ventoinha de resfriamento de 120mm de baixo ruído controlada termalmente gira em alta velocidade somente em momentos de maior carga da fonte e reduz a velocidade em momentos de carga menor para operação mais silenciosa.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="img/card3.png" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">Três anos de garantia apoiada pela equipe de suporte técnico internacional da CORSAIR.</p>
+        </div>
+      </div>
+</div>
+
 
 <footer class="footer">
-    <p>Copyright &copy; 2024 CORSAIR. Todos os direitos reservados.</p>
+    <p>Copyright &copy; 2024 A fonte. Todos os direitos reservados.</p>
 </footer>
 
 
