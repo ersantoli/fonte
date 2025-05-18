@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard de Vendas - Fontes</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f4f4f4; }
+    h1 { text-align: center; }
+    .charts { display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; flex-direction: row; }
+    canvas { background: white; border-radius: 8px; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    table { width: 100%; border-collapse: collapse; margin-top: 40px; background: white; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+    th { background: #eee; }
+    .buttons { margin-top: 30px; text-align: center; }
+    .buttons button { padding: 10px 20px; margin: 5px; font-size: 16px; cursor: pointer; }
+
+    @media (max-width: 768px) {
+      .charts {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Dashboard de Vendas - Fontes de Alimentação</h1>
+  <div class="charts">
+    <canvas id="vendasPorMes" width="400" height="300"></canvas>
+    <canvas id="vendasPorProduto" width="400" height="300"></canvas>
+  </div>
+  <div class="buttons">
+    <button onclick="exportChart('vendasPorMes')">Exportar Gráfico de Barras</button>
+    <button onclick="exportChart('vendasPorProduto')">Exportar Gráfico de Pizza</button>
+  </div>
+  <table id="tabelaVendas">
+    <thead>
+      <tr>
+        <th>Mês</th><th>Cidade</th><th>Gênero</th><th>Produto</th><th>Preço</th><th>Quantidade</th><th>Hora</th><th>Pagamento</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    // Dados agregados
+    const vendasPorMes = {
+      'Janeiro': 2*50,
+      'Fevereiro': 1*80,
+      'Março': 3*40,
+      'Abril': 1*120,
+      'Maio': 2*70
+    };
+
+    const vendasPorProduto = {
+      'Fonte 80 Plus White 400W': 2*50 + 1*80,
+      'Fonte Modular 750W': 3*40 + 2*70,
+      'Fonte SFX 600W': 1*120
+    };
+
+    const chartMes = new Chart(document.getElementById('vendasPorMes'), {
+      type: 'bar',
+      data: {
+        labels: Object.keys(vendasPorMes),
+        datasets: [{
+          label: 'Vendas por Mês (R$)',
+          data: Object.values(vendasPorMes),
+          backgroundColor: 'rgba(54, 162, 235, 0.6)'
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+
+    const chartProduto = new Chart(document.getElementById('vendasPorProduto'), {
+      type: 'pie',
+      data: {
+        labels: Object.keys(vendasPorProduto),
+        datasets: [{
+          label: 'Vendas por Produto (R$)',
+          data: Object.values(vendasPorProduto),
+          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+        }]
+      }
+    });
+
+    // Preencher tabela com dados da planilha
+    const dados = [
+      ['Janeiro', 'São Paulo', 'Feminino', 'Fonte 80 Plus White 400W', 509, 2, '10:30', 'pix'],
+      ['Fevereiro', 'Rio de Janeiro', 'Masculino', 'Fonte 80 Plus White 400W', 810, 1, '14:15', 'Cartão Credito'],
+      ['Março', 'Belo Horizonte', 'Feminino', 'Fonte Modular 750W', 420, 3, '09:45', 'Debito'],
+      ['Abril', 'São Paulo', 'Masculino', 'Fonte SFX 600W', 120, 1, '16:00', 'pix'],
+      ['Maio', 'Rio de Janeiro', 'Feminino', 'Fonte Modular 750W', 730, 2, '11:20', 'Credito']
+    ];
+
+    const tbody = document.querySelector('#tabelaVendas tbody');
+    dados.forEach(row => {
+      const tr = document.createElement('tr');
+      row.forEach(cell => {
+        const td = document.createElement('td');
+        td.textContent = cell;
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
+
+    // Exportar gráfico como imagem
+    function exportChart(id) {
+      const canvas = document.getElementById(id);
+      const link = document.createElement('a');
+      link.download = id + '.png';
+      link.href = canvas.toDataURL();
+      link.click();
+    }
+  </script>
+</body>
+</html>
